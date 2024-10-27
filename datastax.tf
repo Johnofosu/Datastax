@@ -20,3 +20,13 @@ resource "aws_s3_bucket" "datastax_yaw9" {
     Environment = "Dev"
   }
 }
+
+resource "aws_iam_user" "datastax_yaw9" {
+  name = "SERL_DatastaxS3User"
+  path = "/system/"
+
+  tags = {
+    tag-key = "datastax_bucket"
+  }
+}
+
