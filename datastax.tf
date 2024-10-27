@@ -12,3 +12,11 @@ resource "aws_account_region" "region" {
   enabled     = true
 }
 
+resource "aws_s3_bucket" "datastax" {
+  bucket = "datastax"
+
+  tags = {
+    Name        = "datastax_bucket"
+    Environment = "Dev"
+  }
+}
