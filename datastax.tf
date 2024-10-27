@@ -1,19 +1,19 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.73.0"
     }
   }
 }
 
-resource "aws_account_region" "region" {
-  region_name = "eu-west-1"
-  enabled     = true
+provider "aws" {
+  region = "us-west-2" 
 }
 
-resource "aws_s3_bucket" "datastax" {
-  bucket = "datastax"
+
+resource "aws_s3_bucket" "datastax_yaw9" {
+  bucket = "datastax9"
 
   tags = {
     Name        = "datastax_bucket"
